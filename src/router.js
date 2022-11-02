@@ -6,7 +6,7 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    component: MainPage,
+    component: () => import("./pages/MainPage.vue"),
   },
   {
     path: "/photo",
