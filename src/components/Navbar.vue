@@ -10,3 +10,9 @@
     </v-app-bar>
   </v-container>
 </template>
+
+<script>
+export default {
+  name: "Navbar",
+};
+</script>
