@@ -1,28 +1,25 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <!--HEADER-->
+    <v-container>
+      <v-app-bar color="deep-orange" dark>
+        <v-spacer></v-spacer
+        ><!--Создает пустое пространство по вертикали или горизонтали, в данном случае сдвинул кнопки в право -->
+        <v-btn outlined class="mr-5">ГЛАВНАЯ</v-btn
+        ><!-- добавил outlined что бы убрать цвет по дефолту-->
+        <v-btn outlined class="mr-5">ФОТО</v-btn>
+      </v-app-bar>
+    </v-container>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  // components: {
+  // },
+  data: () => ({
+    //
+  }),
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
