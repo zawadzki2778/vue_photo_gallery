@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-container> {{ photo.title + photo.id}} </v-container>
+    <v-container> {{ photo.title + photo.id }} </v-container>
   </div>
 </template>
 

@@ -1,11 +1,8 @@
 <template>
   <div>
     <v-container>
-      <Photo
-        v-for="(photo, id) in photos" 
-        :key="id"
-        :photo="photo"
-      />
+      <Photo v-for="(photo, id) in photos" :key="id" :photo="photo" />
+      <!--:photo - it`s name of props from Photo.vue , "photo" - element, which we have after loops-->
     </v-container>
   </div>
 </template>
@@ -17,16 +14,15 @@ export default {
   components: { Photo },
   data() {
     return {
-      photos: [
-        { id: 1, title: "photo_1" },
-        { id: 2, title: "photo_2" },
-        { id: 3, title: "photo_3" },
-        { id: 4, title: "photo_4" },
-        { id: 5, title: "photo_5" },
-      ],
-    };
-  },
-};
+      photos: [],
+    },
+  }
+
+  mounted () {
+      this.axios.get(`https://jsonplaceholder.typicode.com/photos?_limit=10`)
+      .then(response => this.photos = response.data)
+    }
+}
 </script>
 
 <style scoped>
