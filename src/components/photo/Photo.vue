@@ -3,7 +3,7 @@
         <v-card>
             <v-card-title> {{ photo.title }} </v-card-title>
             <v-card-text>
-                <v-img :src="photo.url" width="250" height="250" />
+                <v-img :src="photo.url" width="200" height="200" />
             </v-card-text>
         </v-card>
     </v-col>

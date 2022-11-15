@@ -17,14 +17,19 @@ export default {
     data() {
         return {
         photos: [],
-        };
+        }
     },
 
-  mounted() {
-    this.axios
-        .get("https://jsonplaceholder.typicode.com/photos?_limit=10")
-        .then((response) => (this.photos = response.data));
-  },
+    mounted() {
+        this.fetchTodo()
+    },
+    methods: {
+        fetchTodo() {
+            this.axios
+            .get("https://jsonplaceholder.typicode.com/photos?_limit=10")
+            .then((response) => (this.photos = response.data));
+        }
+    }
 };
 </script>
 
