@@ -1,19 +1,19 @@
 <template>
-    <div>
-        <v-container>
-            <v-row>
-                <Photo v-for="(photo, id) in photos" :key="id" :photo="photo" />
-                <!--:photo - it`s name of props from Photo.vue , "photo" - element, which we have after loops-->
-            </v-row>
-        </v-container>
-    </div>
+    <v-container>
+        <PhotoForm />
+        <v-row>
+            <Photo v-for="(photo, id) in photos" :key="id" :photo="photo" />
+            <!--:photo - it`s name of props from Photo.vue , "photo" - element, which we have after loops-->
+        </v-row>
+    </v-container>
 </template>
 
 <script>
 import Photo from "@/components/photo/Photo.vue";
+import PhotoForm from "@/components/photo/PhotoForm.vue"
 export default {
     name: "PhotosPage",
-    components: { Photo },
+    components: { Photo, PhotoForm },
     data() {
         return {
         photos: [],
