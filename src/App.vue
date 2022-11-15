@@ -4,8 +4,14 @@
             <Navbar />
             <div class="class">
                 <Slot>
-                    <h2 slot="title">{{ myTitle }}</h2>
-                    <p slot="text">*** paragraf for this title also from app ***</p>
+                    <template v-slot:vita>
+                        <img src="https://i.pinimg.com/originals/8c/9b/68/8c9b68645e6058b4309e644df0faee34.jpg" alt="bater">
+                    </template>
+
+                    <template v-slot:maksim>
+                        <h2>{{ myTitle }}</h2>
+                        <p>*** paragraf for this title also from app ***</p>
+                    </template>                                                                                
                 </Slot>
             </div>
             <router-view />
@@ -28,9 +34,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-h2,
-p {
-    text-align: center;
+<style lang="scss">
+img {
+    width: 200px auto;
 }
 </style>
