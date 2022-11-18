@@ -1,8 +1,8 @@
 <template>
     <div>
+        <slot name="maksim"/>
         <slot name="vita"/>
         <h1>Title for Slot</h1>
-        <slot name="maksim"/>
     </div>
 </template>
 
