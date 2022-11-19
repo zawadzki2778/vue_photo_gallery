@@ -1,8 +1,8 @@
 <template>
     <div>
-        <slot name="maksim"/>
-        <slot name="vita"/>
-        <h1>Title for Slot</h1>
+        <slot name="maksim" />
+        <slot name="vita" />
+        <h1>SLOT-SLOT-SLOT-SLOT</h1>
     </div>
 </template>
 
@@ -12,10 +12,11 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped>
 h1 {
     text-align: center;
     color: blue;
-    font-size: 42px;
+    font-size: 38px;
 }
+
 </style>

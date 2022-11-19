@@ -5,7 +5,7 @@
             <div class="class">
                 <Slot>
                     <template v-slot:vita>
-                        <img src="https://i.pinimg.com/originals/8c/9b/68/8c9b68645e6058b4309e644df0faee34.jpg" alt="bater">
+                        <p><img src="https://i.pinimg.com/originals/8c/9b/68/8c9b68645e6058b4309e644df0faee34.jpg" alt="bater"></p>
                     </template>
 
                     <template v-slot:maksim>
@@ -28,14 +28,17 @@ export default {
     components: { Slot, Navbar },
     data() {
         return {
-            myTitle: " new TITLE from APP",
+            myTitle: "TITLE FROM APP",
         };
     },
 };
 </script>
 
-<style lang="scss">
-img {
-    width: 200px auto;
-}
+<style scoped>
+    h2, p {
+        text-align: center;
+    }
+    img {
+        width: 800px;
+    }
 </style>
