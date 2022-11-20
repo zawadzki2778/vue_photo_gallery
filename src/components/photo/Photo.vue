@@ -19,7 +19,7 @@ export default {
     },
     methods: {
         openPhoto() {
-            this.$emit('openPhoto', this.photo) //--> PhotoPage ctr
+            this.$emit('openPhoto', this.photo) // далее--> PhotoPage ctr 36
         }
     }
 };
