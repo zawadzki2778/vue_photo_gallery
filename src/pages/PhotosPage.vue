@@ -1,8 +1,11 @@
 <template>
     <v-container>
-        <PhotoForm @addPhoto="addPhoto"/><!--привязываем в комп. назв.emit addPhoto из PhotoForm, вешаем на него слушатель и после = прописываем ф-ию, которая будет вызываться в methods и пушить фото в массив -->
+        <PhotoForm v-if="photos.length < 11" @addPhoto="addPhoto"/>
+                   <div v-else>NOT MOORE PHOTOS</div>
+        <!--привязываем в комп. назв.emit addPhoto из PhotoForm, вешаем на него слушатель и после = прописываем ф-ию, которая будет вызываться в methods и пушить фото в массив -->
+        <!--added logick for hiden inputs -->
         <v-row>
-            <Photo v-for="(photo, id) in photos" 
+            <Photo v-for="(photo, id) in $store.getters.getAllPhotos" 
                    :key="id" 
                    :photo="photo"
                    @openPhoto="openPhoto" />
@@ -28,14 +31,15 @@ export default {
         }
     },
     mounted() {
-        this.fetchTodo()
+        // this.fetchTodo()
+        this.$store.dispatch(fetchPhotos)//dispatch работает с аминхронныии actions, в параметре назв. actions
     },
     methods: {
-        fetchTodo() {
-            this.axios
-            .get("https://jsonplaceholder.typicode.com/photos?_limit=10")
-            .then((response) => (this.photos = response.data))
-        },
+        // fetchTodo() {
+        //     this.axios
+        //     .get("https://jsonplaceholder.typicode.com/photos?_limit=10")
+        //     .then((response) => (this.photos = response.data))
+        // },
         addPhoto(photo) { // название ф-ции, присвоенное выше при подключении комп.PhotosPage, принимающее в кач-ве параметра объект photo
             this.photos.push(photo)
         },
