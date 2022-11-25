@@ -1,11 +1,11 @@
 <template>
-    <v-continer>
+    <v-container>
         <v-row class="d-flex">
             <v-text-field  v-model="title"/> <!-- связываем input с переменными из data, теперь при каждом изм.инпуту меняются и значения переменных в дате-->
-            <v-file-input v-model='img'/>
+            <v-file-input v-model="img"/>
             <v-btn @click="addPhoto">Добавить фото</v-btn> <!--вешаем слущатель на кнопку и начинаем реализовывать логику , далее стр 21 -->
         </v-row>
-    </v-continer>
+    </v-container>
 </template>
 
 <script>
@@ -14,7 +14,7 @@ export default {
     data() {
         return {
             title: '',
-            img: 'null'
+            img: null
         }
     },
     methods: {

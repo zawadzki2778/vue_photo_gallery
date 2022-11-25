@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import photoModule from '@/store/photoModule'
+import photoModule from '../modules/photoModule'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({ // add new 
+export default new Vuex.Store({ 
     modules: { photoModule },
 }) 
