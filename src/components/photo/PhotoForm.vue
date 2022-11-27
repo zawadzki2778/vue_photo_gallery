@@ -28,8 +28,8 @@ export default {
                 }
                 this.$emit('addPhoto', photo)//при помощи $emit прокидывает созданный здесь ОБЪЕКТ photo в пустой массив photos, который объявили в компоненте PhotosPage. Далее идё в комп.PhotosPage стр 3
             }
-            reader.readAsDataURL(this.img)
-            console.log(photo);           
+            // if (!this.img) {
+            reader.readAsDataURL(this.img)       
         }
     }
 }

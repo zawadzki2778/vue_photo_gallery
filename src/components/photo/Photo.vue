@@ -3,7 +3,7 @@
         <v-card @click="openPhoto"> <!--вешаем обр для открытия мод.окна + method стр21-->
             <v-card-title class="photo-title"> {{ photo.title }} </v-card-title>
             <v-card-text class="text">
-                <v-img :src="photo.thumbnailUrl" width="330" height="200" />
+                <v-img :src="photo.url" width="330" height="200" />
             </v-card-text>
         </v-card>
     </v-col>
@@ -11,7 +11,7 @@
 
 <script>
 export default {  
-    props: {// name: "Photo",
+    props: {
         photo: {
         type: Object,
         required: true

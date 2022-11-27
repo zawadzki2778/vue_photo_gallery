@@ -1,4 +1,8 @@
-<template></template>
+<template>
+<div class="main">
+    PAGE MAIN
+</div>
+</template>
 
 <script>
 export default {
@@ -8,4 +12,7 @@ export default {
 </script>
 
 <style scoped>
+.main {
+    text-align: center;
+}
 </style>

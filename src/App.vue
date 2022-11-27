@@ -2,6 +2,7 @@
     <div>
         <v-app>
             <Navbar />
+            <DropDown />
             <div class="class">
                 <Slotq>
                     <template v-slot:vita>
@@ -20,12 +21,13 @@
 </template>
 
 <script>
-import Slotq from "@/components/Slot";
-import Navbar from "@/components/Navbar";
 
+import Navbar from "@/components/Navbar";
+import Slotq from "@/components/Slot.vue"
+import DropDown from "@/components/DropDown.vue"
 export default {
     name: "App",
-    components: { Slotq, Navbar },
+    components: { Navbar, Slotq, DropDown },
     data() {
         return {
             myTitle: "TITLE FROM APP",
