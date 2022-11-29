@@ -1,8 +1,8 @@
 <template>
     <div class="slots">
-        <slot name="maksim" />
+        <!-- <slot name="maksim" />
         <slot name="vita" />
-        <h2>SLOT-SLOT-SLOT-SLOT</h2>
+        <h2>SLOT-SLOT-SLOT-SLOT</h2> -->
         <v-btn class="to__cart" @click="btnClick">ADD CART</v-btn>
     </div>
 </template>
@@ -19,7 +19,7 @@ export default {
         ...mapActions(["FETCH_DROPDOWN"]),
 
         btnClick() {
-            this.FETCH_DROPDOWN(),
+            this.FETCH_DROPDOWN()
         },
     }
 };

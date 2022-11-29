@@ -1,19 +1,18 @@
 <template>
-  <v-container>
-    <PhotoForm v-if="photos.length < 6" @addPhoto="addPhoto" />
-    <div v-else>NOT MOORE PHOTOS</div>
-    <!--привязываем в комп. назв.emit addPhoto из PhotoForm, вешаем на него слушатель и после = прописываем ф-ию, которая будет вызываться в methods и пушить фото в массив -->
-    <v-row>
-      <Photo
-        v-for="(photo, index) in GET_PHOTOS"
-        :key="index"
-        :photo="photo"
-        @openPhoto="openPhoto"
-      />
-      <!--вешаем cлушaтель на заемиченый openPhoto-->
-    </v-row>
-    <PhotoDialog :photo="currentPhoto" v-model="dialogVisible" />
-  </v-container>
+    <v-container>
+        <PhotoForm @addPhoto="addPhoto" />
+        <!--привязываем в комп. назв.emit addPhoto из PhotoForm, вешаем на него слушатель и после = прописываем ф-ию, которая будет вызываться в methods и пушить фото в массив -->
+        <v-row>
+        <Photo
+            v-for="(photo, index) in GET_PHOTOS"
+            :key="index"
+            :photo="photo"
+            @openPhoto="openPhoto"
+        />
+        <!--вешаем cлушaтель на заемиченый openPhoto-->
+        </v-row>
+        <PhotoDialog :photo="currentPhoto" v-model="dialogVisible" />
+    </v-container>
 </template>
 
 <script>
@@ -44,7 +43,7 @@ export default {
         addPhoto(photo) {
         // название ф-ции, присвоенное выше при подключении комп.PhotosPage, принимающее в кач-ве параметра объект photo
         // this.$store.state.photos.push(photo);
-        this.photos = GET_PHOTOS(this.$store.state);
+        this.photos = GET_PHOTOS(this.$store.state.photos);
         this.photos.push(photo);
         },
         openPhoto(photo) {

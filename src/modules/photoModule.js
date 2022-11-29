@@ -8,8 +8,9 @@ export default ({
     },
     getters: {
         GET_PHOTOS: (state) => state.photos,
-    },
+    
         GET_DROPDOWN: (state) => state.isDropDownVisible,
+    },
     actions: {
         async FETCH_PHOTOS({ commit }) {
             console.log('321')
@@ -32,7 +33,7 @@ export default ({
             state.photos = photos;
         },
         SET_DROPDOWN(state) {
-            state.dialogVisible = true;
+            state.isDropDownVisible = true;
         }
     },
 });

@@ -14,5 +14,6 @@ export default {
 <style scoped>
 .main {
     text-align: center;
+    margin-top: 20px;
 }
 </style>
