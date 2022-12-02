@@ -26,9 +26,8 @@ export default {
                     title: this.title,
                     url: reader.result
                 }
-                this.$emit('addPhoto', photo)//при помощи $emit прокидывает созданный здесь ОБЪЕКТ photo в пустой массив photos, который объявили в компоненте PhotosPage. Далее идё в комп.PhotosPage стр 3
+                this.$root.$emit('addPhoto', photo)//при помощи $emit прокидывает созданный здесь ОБЪЕКТ photo в пустой массив photos, который объявили в компоненте PhotosPage. Далее идё в комп.PhotosPage стр 3
             }
-            // if (!this.img) {
             reader.readAsDataURL(this.img)       
         }
     }

@@ -1,6 +1,6 @@
 <template>
     <v-container>
-        <PhotoForm @addPhoto="addPhoto" />
+        <PhotoForm />
         <!--привязываем в комп. назв.emit addPhoto из PhotoForm, вешаем на него слушатель и после = прописываем ф-ию, которая будет вызываться в methods и пушить фото в массив -->
         <v-row>
         <Photo
@@ -31,8 +31,10 @@ export default {
         };
     },
     mounted() {
+        this.$root.$on('addPhoto', (value) =>{
+        this.GET_PHOTOS.push(value)
+         })
         this.FETCH_PHOTOS(this.photos)
-        /* this.$store.dispatch(fechPhotos);  */ //dispatch работает с аcинхронныии actions, в параметре назв. actions
     },
     computed: {
         ...mapGetters(["GET_PHOTOS"]),
@@ -40,12 +42,6 @@ export default {
     methods: {
         ...mapActions(["FETCH_PHOTOS"]),
 
-        addPhoto(photo) {
-        // название ф-ции, присвоенное выше при подключении комп.PhotosPage, принимающее в кач-ве параметра объект photo
-        // this.$store.state.photos.push(photo);
-        this.photos = GET_PHOTOS(this.$store.state.photos);
-        this.photos.push(photo);
-        },
         openPhoto(photo) {
         // название ф-ции, присвоенное в Photo.vue для emit
         this.currentPhoto = photo;
