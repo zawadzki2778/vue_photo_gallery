@@ -4,7 +4,8 @@ export default ({
     state: {
         photos: [],
         dialogVisible: false,
-        isDropDownVisible: false
+        isDropDownVisible: false,
+        isPhotoVisible: false
     },
     getters: {
         GET_PHOTOS: (state) => state.photos,
@@ -26,6 +27,9 @@ export default ({
         },
         FETCH_DROPDOWN({ commit }) {
             commit('SET_DROPDOWN')
+        },
+        DELETE_FROM_PHOTOS({commit}, index) {
+            commit('REMOVE_FROM_PHOTOS', index)
         }
     },
     mutations: {
@@ -34,30 +38,9 @@ export default ({
         },
         SET_DROPDOWN(state) {
             state.isDropDownVisible = true;
+        },
+        REMOVE_FROM_PHOTOS(state, index) { // связываем в PhotosPage стр 53
+            state.photos.splice(index, 1)
         }
     },
-});
-
-// export default {
-//     state: {
-//         photos: []
-//     },
-//     getters: {
-//         getAllPhotos(state) {
-//             return state.photos
-//         }
-//     },
-//     mutations: {
-//         setPhotos(state, payload) {
-//             state.photos = payload
-//         }
-//     },
-//     actions: {
-//         fetchPhotos(context) {
-//             this.axios
-//                 .get("https://jsonplaceholder.typicode.com/photos?_limit=10")
-//                 .then(response => context.commit('setPhotos', response.data))
-//         }
-//     }
-// }
-//https://mocki.io/v1/43ca95fe-ed74-409e-ab46-895cc18b9920
+})

@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <v-row class="d-flex">
-            <v-text-field  v-model="title"/> <!-- связываем input с переменными из data, теперь при каждом изм.инпуту меняются и значения переменных в дате-->
+            <v-text-field class="text-center" v-model="title" /> <!-- связываем input с переменными из data, теперь при каждом изм.инпуту меняются и значения переменных в дате-->
             <v-file-input v-model="img"/>
             <v-btn @click="addPhoto">Добавить фото</v-btn> <!--вешаем слущатель на кнопку и начинаем реализовывать логику , далее стр 21 -->
         </v-row>
@@ -26,13 +26,13 @@ export default {
                     title: this.title,
                     url: reader.result
                 }
-                this.$root.$emit('addPhoto', photo)//при помощи $emit прокидывает созданный здесь ОБЪЕКТ photo в пустой массив photos, который объявили в компоненте PhotosPage. Далее идё в комп.PhotosPage стр 3
+                this.$root.$emit('addPhoto', photo)//при помощи $emit прокидывает созданный здесь ОБЪЕКТ photo 
             }
             reader.readAsDataURL(this.img)       
         }
     }
 }
 </script>
-
 <style scoped>
+
 </style>

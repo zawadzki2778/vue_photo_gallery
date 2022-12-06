@@ -1,5 +1,18 @@
 <template>
     <v-col cols="4">
+        <div class="text-center">
+            <div class="my-2">
+              <v-btn
+                x-small
+                color="secondary"
+                dark
+                @click="deletePhoto"
+              >
+                Удалить
+              </v-btn>
+            </div>
+        </div>
+    
         <v-card @click="openPhoto"> <!--вешаем обр для открытия мод.окна + method стр21-->
             <v-card-title class="photo-title"> {{ photo.title }} </v-card-title>
             <v-card-text class="text">
@@ -19,7 +32,11 @@ export default {
     },
     methods: {
         openPhoto() {
-            this.$emit('openPhoto', this.photo) // далее--> PhotoPage ctr 36
+            this.$emit('openPhoto', this.photo) // далее--> PhotoPage ctr 45
+        },
+        deletePhoto() {
+            this.$emit('deletePhoto') // далее--> PhotoPage 
+            alert('ТЫ УВЕРЕН ???');
         }
     }
 };
@@ -27,6 +44,7 @@ export default {
 
 <style scoped>
     .photo-title {
+        text-align: center;
         min-height: 50px;
     }
     .text {
