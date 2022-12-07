@@ -1,6 +1,6 @@
 <template>
     <v-dialog 
-    max-width="600px"
+    max-width="900px"
     v-model="value"
     >
         <v-card>

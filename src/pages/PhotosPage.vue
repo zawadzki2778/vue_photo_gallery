@@ -10,8 +10,8 @@
                 @openPhoto="openPhoto"
                 @deletePhoto="deletePhoto(index)" 
             />
+            <!--вешаем cлушaтель на заемиченый openPhoto-->
             <!-- Добавил индекс чтобы удалялась именно та карта --->
-        <!--вешаем cлушaтель на заемиченый openPhoto-->
         </v-row>
         <PhotoDialog :photo="currentPhoto" v-model="dialogVisible" />
     </v-container>
@@ -52,9 +52,6 @@ export default {
         deletePhoto(index) {
             this.DELETE_FROM_PHOTOS(index)
             console.log(index);
-            // this.currentPhoto = photo;
-            // this.isPhotoVisible = true;
-            // this.GET_PHOTOS.delete(photo);
         },       
     },
 };

@@ -1,6 +1,6 @@
 <template>
 <div class="main">
-    PAGE MAIN
+    <img class="monkey" src="../../assets/monkey-selfie_custom.jpg" alt="monkey">
 </div>
 </template>
 
@@ -15,5 +15,8 @@ export default {
 .main {
     text-align: center;
     margin-top: 20px;
+}
+.monkey {
+    width: 400px;
 }
 </style>
