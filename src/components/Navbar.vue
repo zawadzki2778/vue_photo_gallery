@@ -1,7 +1,7 @@
 <template>
     <!--HEADER-->
     <v-container>
-        <v-app-bar color="deep-orange" dark>
+        <v-app-bar color="green" dark>
             <v-spacer></v-spacer
             ><!--v-spacer cоздает пустое пространство по вертикали или горизонтали, в данном случае сдвинул кнопки в право -->
             <v-btn outlined class="mr-5" 
