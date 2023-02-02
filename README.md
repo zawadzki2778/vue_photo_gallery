@@ -1,12 +1,8 @@
-# vuetify_cli
+# vue_photo_gallery
 
 ## Project setup
 ```
 npm install
-```
-
-### Compiles and hot-reloads for development
-```
 npm run serve
 ```
-Demo: vue-photo-gallery.vercel.app
+Demo: https://vue-photo-gallery.vercel.app
