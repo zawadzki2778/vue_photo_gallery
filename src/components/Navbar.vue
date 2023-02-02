@@ -24,5 +24,4 @@ export default {
     color: whitesmoke;
     text-decoration: none;
 }
-
 </style>

@@ -16,7 +16,7 @@
             <!--вешаем обр для открытия мод.окна + method стр21-->
             <v-card-title class="photo-title"> {{ photo.title }} </v-card-title>
             <v-card-text class="text">
-            <v-img :src="photo.url" width="330" height="200" />
+                <v-img :src="photo.url" width="330" height="200" />
             </v-card-text>
         </v-card>
     </v-col>
@@ -24,33 +24,30 @@
 
 <script>
 export default {
-  props: {
-    photo: {
-      type: Object,
-      required: true,
+    props: {
+        photo: {
+        type: Object,
+        required: true,
+        },
     },
-  },
-  methods: {
-    openPhoto() {
-      this.$emit("openPhoto", this.photo); // далее--> PhotoPage ctr 45
+    methods: {
+        openPhoto() {
+        this.$emit("openPhoto", this.photo); // далее--> PhotoPage ctr 45
+        },
+        deletePhoto() {
+        this.$emit("deletePhoto"); // далее--> PhotoPage
+        },
     },
-    deletePhoto() {
-      this.$emit("deletePhoto"); // далее--> PhotoPage
-      // alert("ARE YOU SHURE ???? V I T O S H K A");
-    },
-  },
 };
 </script>
 
 <style scoped>
 .photo-title {
-  text-align: center;
-  min-height: 50px;
+    text-align: center;
+    height: 80px;
 }
 .text {
-  min-width: 150px;
+    min-width: 150px;
 }
-.photo-title {
-  height: 80px;
-}
+
 </style>
